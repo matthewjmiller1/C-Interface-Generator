@@ -1,0 +1,68 @@
+
+AUTHOR
+    NAME Matt Miller
+    EMAIL matt@matthewmiller.net
+END AUTHOR
+
+LICENSE
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+END LICENSE
+
+INTERFACE gui_factory
+
+    INCLUDE "button_gen.h"
+
+    # Create a button for the GUI
+    FUNCTION create_button
+        RETURN button_handle
+        INPUT void
+    END FUNCTION
+
+END INTERFACE
+
+# A Windows GUI factory
+CLASS win_factory
+    IMPLEMENTS gui_factory
+    END IMPLEMENTS
+END CLASS
+
+# A Max GUI factory
+CLASS osx_factory
+    IMPLEMENTS gui_factory
+    END IMPLEMENTS
+END CLASS
+
+INTERFACE button
+
+    # Draw the button
+    FUNCTION paint
+        RETURN void
+        INPUT void
+    END FUNCTION
+
+END INTERFACE
+
+# A Windows button
+CLASS win_button
+    IMPLEMENTS button
+    END IMPLEMENTS
+END CLASS
+
+# A Mac button
+CLASS osx_button
+    IMPLEMENTS button
+    END IMPLEMENTS
+END CLASS
+

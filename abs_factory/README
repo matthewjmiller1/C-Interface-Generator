@@ -1,0 +1,17 @@
+This gives a working example of how to use the c_intf_gen.py script.  Assuming
+the script is in the parent directory, all you should need to do is:
+
+make all
+./test_abs_factory
+
+If the script is located elsewhere, adjust the GEN_SCRIPT variable in the
+Makefile.
+
+The example is based on the abstract factory design pattern given in Wikipedia:
+
+http://en.wikipedia.org/wiki/Abstract_factory
+
+Namely, it creates a Windows and OSX GUI factory conforming to the GUI factory
+interface along with a OS-specific buttons conforming to the button interface
+and then builds a trivial GUI and paints its buttons.  The output will show the
+OS-specific paint function being called when the button is drawn.

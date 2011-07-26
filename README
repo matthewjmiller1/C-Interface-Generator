@@ -1,0 +1,25 @@
+This is a Python script to generate C code to support OO-like interfaces which
+can then be compiled with gcc.  See the docstring in the script for more
+details.  The basic usage is:
+
+c_intf_gen.py <interface description file>
+
+The abs_factory directory gives a complete example of how this can be used to
+implement the abstract factory design pattern:
+
+http://en.wikipedia.org/wiki/Abstract_factory
+
+This script requires Python 2.7+.
+
+The motiviation for writing this script is a lot of OO-design principles can be
+done with just interfaces (i.e., without type inheritance).  Many of the GoF
+Design Patterns can be done with just interfaces and the Go language strongly
+favors interfaces for OO design.  For a good overview of the importance of
+interfaces:
+
+http://www.artima.com/weblogs/viewpost.jsp?thread=274019
+
+Obviously interfaces can be done in C, but it takes a fair amount 
+of "boring", error-prone code to setup all the relationships between structs.
+So, this attempts to generate most of the "boring" code required to support
+interfaces to make their usage easier.
