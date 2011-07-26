@@ -14,4 +14,5 @@ EXAMPLE=abs_factory
 
 tar:
 	tar -czvf $(NAME).tar.gz ../$(NAME) --exclude *.swp --exclude *.o \
-        --exclude test_$(EXAMPLE) --exclude $(EXAMPLE).tar.gz
+        --exclude test_$(EXAMPLE) --exclude $(EXAMPLE).tar.gz \
+        --exclude .git --exclude $(NAME).tar.gz
